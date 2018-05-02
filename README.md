@@ -1,3 +1,39 @@
+```bash
+.
+├── README.md
+├── app
+│   ├── 404.html
+│   ├── actions
+│   │   └── index.js
+│   ├── components
+│   │   ├── App
+│   │   │   └── index.js
+│   │   ├── Footer
+│   │   │   └── index.js
+│   │   ├── Navigation
+│   │   │   └── index.js
+│   │   ├── Routes
+│   │   │   └── index.js
+│   ├── constants
+│   │   └── action-types.js
+│   ├── index.html
+│   ├── index.js
+│   └── reducers
+│       ├── index.js
+├── assets
+│   ├── favicon.ico
+│   └── styles
+│       ├── components
+│       │   ├── App.scss
+│       └── index.scss
+├── dist
+│   └── report.html
+├── package.json
+├── webpack.config.build.js
+├── webpack.config.dev.js
+├── webpack.config.js
+```
+
 
 ## Requirements
 You only need <b>node.js</b> pre-installed and you’re good to go.
