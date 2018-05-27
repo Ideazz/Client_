@@ -9,6 +9,7 @@
         "browser": true
     },
     "rules": {
+        "linebreak-style": 0,
 		"no-console": "off",
 	    "no-debugger": "off",
         "no-underscore-dangle": [
