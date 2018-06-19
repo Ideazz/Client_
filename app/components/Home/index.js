@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { slide as Menu } from 'react-burger-menu';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import LeftMenu from '../LeftMenu/index';
 import RightMenu from '../RightMenu/index';
 
@@ -16,14 +16,16 @@ class Home extends Component {
   }
 
   handleMenu() {
-    console.log('This is show left');
-    console.log(this.state.showLeft);
-    this.setState({ showLeft: !this.state.showLeft });
+    this.setState({
+      showLeft: !this.state.showLeft,
+      showRight: false,
+    });
   }
   handleMenuRight() {
-    console.log('This is show Right');
-    console.log(this.state.showRight);
-    this.setState({ showRight: !this.state.showRight });
+    this.setState({
+      showRight: !this.state.showRight,
+      showLeft: false,
+    });
   }
   render() {
     return (
@@ -41,9 +43,16 @@ class Home extends Component {
           >
             Left
           </button>
-          <Menu isOpen={this.state.showLeft}>
-            <LeftMenu />
-          </Menu>
+          <ReactCSSTransitionGroup
+            transitionName="backgroundLeft"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+            {this.state.showLeft ?
+              <LeftMenu /> :
+              null
+            }
+          </ReactCSSTransitionGroup>
         </div>
         <div>
           <button
@@ -58,12 +67,16 @@ class Home extends Component {
           >
             Right
           </button>
-          <Menu
-            right
-            isOpen={this.state.showRight}
+          <ReactCSSTransitionGroup
+            transitionName="backgroundRight"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
           >
-            <RightMenu />
-          </Menu>
+            {this.state.showRight ?
+              <RightMenu /> :
+            null
+          }
+          </ReactCSSTransitionGroup>
         </div>
       </div>
     );
