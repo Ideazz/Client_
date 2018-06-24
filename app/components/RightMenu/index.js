@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 /* import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; */
 
 class RightMenu extends Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
     this.state = {
-      showRight: true,
     };
-    this.handleMenuRight = this.handleMenuRight.bind(this);
   }
-
-  handleMenuRight() {
-    this.setState({
-      showRight: !this.state.showRight,
-    });
+  static get propTypes() {
+    return {
+      close: PropTypes.func,
+    };
   }
   render() {
     return (
@@ -23,21 +20,17 @@ class RightMenu extends Component {
             position: 'fixed',
             width: '100%',
             height: '100%',
-            left: '300px',
             top: '64px',
             backgroundColor: '#D3D3D3',
         }}
       >
         <div>
           <button
-            onClick={this.handleMenuRight}
+            onClick={this.props.close}
           >
             Close
           </button>
-          {this.state.showRight ?
-              null :
-              null
-            }
+          {this.state.showRight}
           <h2>
             Right Menu!
           </h2>
