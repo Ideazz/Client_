@@ -20,6 +20,10 @@ html {
 nav ul {
     list-style: none;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: #f0f0f0;
 }
 
