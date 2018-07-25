@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-/* import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; */
+import '../../../assets/styles/components/App.scss';
 
 class RightMenu extends Component {
   constructor(props) {
@@ -16,13 +16,7 @@ class RightMenu extends Component {
   render() {
     return (
       <div
-        style={{
-            position: 'fixed',
-            width: '100%',
-            height: '100%',
-            top: '64px',
-            backgroundColor: '#D3D3D3',
-        }}
+        className="main_menu"
       >
         <div>
           <button

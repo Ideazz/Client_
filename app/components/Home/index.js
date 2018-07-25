@@ -24,17 +24,19 @@ class Home extends Component {
       });
     } else {
       this.setState({
-        showLeft: false,
         showRight: !this.state.showRight,
+        showLeft: false,
       });
     }
   }
+
   close() {
     this.setState({
       showRight: false,
       showLeft: false,
     });
   }
+
   render() {
     return (
       <div>
