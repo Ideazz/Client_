@@ -13,23 +13,23 @@ class Home extends Component {
       showRight: false,
     };
     this.handleMenu = this.handleMenu.bind(this);
-    this.handleMenuRight = this.handleMenuRight.bind(this);
-    this.closeRightMenu = this.closeRightMenu.bind(this);
+    this.close = this.close.bind(this);
   }
 
-  handleMenu() {
-    this.setState({
-      showLeft: !this.state.showLeft,
-      showRight: false,
-    });
+  handleMenu(position) {
+    if (position === 'left') {
+      this.setState({
+        showLeft: !this.state.showLeft,
+        showRight: false,
+      });
+    } else {
+      this.setState({
+        showLeft: false,
+        showRight: !this.state.showRight,
+      });
+    }
   }
-  handleMenuRight() {
-    this.setState({
-      showLeft: false,
-      showRight: !this.state.showRight,
-    });
-  }
-  closeRightMenu() {
+  close() {
     this.setState({
       showRight: false,
       showLeft: false,
@@ -41,7 +41,7 @@ class Home extends Component {
         <div>
           <button
             className="left_button"
-            onClick={this.handleMenu}
+            onClick={() => this.handleMenu('left')}
           >
             Left
           </button>
@@ -50,11 +50,12 @@ class Home extends Component {
             transitionEnterTimeout={300}
             transitionLeaveTimeout={300}
           >
-            {this.state.showLeft ?
-              <LeftMenu
-                close={this.closeRightMenu}
-                left={this.state.showLeft}
-              /> :
+            {
+              this.state.showLeft ?
+                <LeftMenu
+                  close={this.close}
+                  left={this.state.showLeft}
+                /> :
               null
             }
           </ReactCSSTransitionGroup>
@@ -62,7 +63,7 @@ class Home extends Component {
         <div>
           <button
             className="right_button"
-            onClick={this.handleMenuRight}
+            onClick={() => this.handleMenu('right')}
           >
             Right
           </button>
@@ -71,11 +72,12 @@ class Home extends Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
           >
-            {this.state.showRight ?
-              <RightMenu
-                close={this.closeRightMenu}
-                right={this.state.showRight}
-              /> :
+            {
+              this.state.showRight ?
+                <RightMenu
+                  close={this.close}
+                  right={this.state.showRight}
+                /> :
                 null
             }
           </ReactCSSTransitionGroup>
