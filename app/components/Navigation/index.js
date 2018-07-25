@@ -8,6 +8,8 @@ const Navigation = () => (
       <li><Link to="/list">List</Link></li>
       <li><Link to="/form">Form</Link></li>
       <li><Link to="/test">Test</Link></li>
+      <li><Link to="/login_one">Login As Ideators</Link></li>
+      <li><Link to="/login_two">Login As Entreprenuer</Link></li>
     </ul>
   </nav>
 );
