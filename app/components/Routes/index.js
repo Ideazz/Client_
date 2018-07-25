@@ -7,9 +7,10 @@ import Error404 from '../Error404/index';
 import Home from '../Home/index';
 import LoginOne from '../Login_One/index';
 import LoginTwo from '../Login_Two/index';
+import '../../../assets/styles/components/App.scss';
 
 const Main = () => (
-  <main>
+  <main className="main">
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/list" component={List} />

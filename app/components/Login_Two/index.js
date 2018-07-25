@@ -3,7 +3,6 @@ import React, { } from 'react';
 const LoginTwo = () => (
   <div
     style={{
-    paddingTop: '65px',
     backgroundColor: '#1E90FF',
   }}
   >

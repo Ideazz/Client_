@@ -5,11 +5,7 @@ import PropTypes from 'prop-types';
 const mapStateToProps = state => ({ articles: state.articles });
 
 const ConnectedList = ({ articles }) => (
-  <div
-    style={{
-      paddingTop: '60px',
-   }}
-  >
+  <div>
     <ul className="list-group list-group-flush">
       {articles.map(el => (
         <li className="list-group-item" key={el.id}>

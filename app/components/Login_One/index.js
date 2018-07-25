@@ -10,7 +10,6 @@ class LoginOne extends Component {
     return (
       <div
         style={{
-        paddingTop: '65px',
         backgroundColor: '#1E90FF',
       }}
       >

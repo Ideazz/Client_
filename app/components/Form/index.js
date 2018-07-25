@@ -35,11 +35,7 @@ class ConnectedForm extends Component {
   render() {
     const { title } = this.state;
     return (
-      <div
-        style={{
-          paddingTop: '65px',
-        }}
-      >
+      <div>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title</label>

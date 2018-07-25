@@ -21,11 +21,7 @@ class ConnectedTest extends Component {
   }
   render() {
     return (
-      <div
-        style={{
-          paddingTop: '75px',
-        }}
-      >
+      <div>
         <button onClick={this.handleButton}>This is a button</button>
         <Testt />
       </div>
