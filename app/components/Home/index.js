@@ -37,11 +37,7 @@ class Home extends Component {
   }
   render() {
     return (
-      <div
-        style={{
-          backgroundColor: '#1E90FF',
-        }}
-      >
+      <div>
         <div>
           <button
             className="left_button"
@@ -85,7 +81,7 @@ class Home extends Component {
           </ReactCSSTransitionGroup>
         </div>
         <div>
-          <h1>
+          <h3>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
             do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Amet aliquam id diam maecenas ultricies. Adipiscing bibendum est
@@ -100,8 +96,14 @@ class Home extends Component {
                  ac tincidunt vitae semper quis lectus nulla. Cursus turpis massa
                   tincidunt dui ut ornare. Risus ultricies tristique nulla aliquet
                   enim tortor. Diam quis enim lobortis scelerisque. Quisque egestas
-                   diam in arcu
-          </h1>
+                   diam in arcu Erat velit scelerisque in dictum non consectetur
+                   a erat nam. Feugiat nisl pretium fusce id velit ut tortor pretium
+                    viverra. Feugiat in fermentum posuere urna. Enim neque volutpat
+                    ac tincidunt vitae semper quis lectus nulla. Cursus turpis massa
+                     tincidunt dui ut ornare. Risus ultricies tristique nulla aliquet
+                     enim tortor. Diam quis enim lobortis scelerisque. Quisque egestas
+                      diam in arcu
+          </h3>
         </div>
       </div>
     );
