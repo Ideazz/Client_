@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import List from '../List/index';
-import Form from '../Form/index';
-import Test from '../Test/index';
-import Error404 from '../Error404/index';
-import Home from '../Home/index';
-import LoginOne from '../Login_One/index';
-import LoginTwo from '../Login_Two/index';
+import List from '../List';
+import Form from '../Form';
+import Test from '../Test';
+import Error404 from '../Error404';
+import Home from '../Home';
+import LoginOne from '../Login_One';
+import LoginTwo from '../Login_Two';
 import '../../../assets/styles/components/App.scss';
 
 const Main = () => (
