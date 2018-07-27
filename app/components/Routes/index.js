@@ -8,6 +8,7 @@ import Home from '../Home';
 import LoginOne from '../Login_One';
 import LoginTwo from '../Login_Two';
 import '../../../assets/styles/components/App.scss';
+import Ideas from '../Ideas';
 
 const Main = () => (
   <main className="main">
@@ -18,6 +19,7 @@ const Main = () => (
       <Route path="/test" component={Test} />
       <Route path="/login_one" component={LoginOne} />
       <Route path="/login_two" component={LoginTwo} />
+      <Route path="/ideas" component={Ideas} />
       <Route path="/*" component={Error404} />
     </Switch>
   </main>
