@@ -12,7 +12,8 @@
         "linebreak-style": 0,
         "react/require-default-props": "off",
 		"no-console": "off",
-	    "no-debugger": "off",
+        "no-debugger": "off",
+        "react/forbid-prop-types": 0,
         "no-underscore-dangle": [
             "error",
             {

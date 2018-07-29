@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col, Modal } from 'react-bootstrap';
+// import MessageModal from '../MessageModal/index';
 
 class Ideas extends Component {
   constructor(props) {
@@ -8,8 +9,15 @@ class Ideas extends Component {
       open: false,
       open1: false,
       open2: false,
+      show_message: false,
     };
+    this.closeMessage = this.closeMessage.bind(this);
   }
+
+  closeMessage() {
+    this.setState({ show_message: false });
+  }
+
   render() {
     return (
       <div className="container">
@@ -26,6 +34,28 @@ class Ideas extends Component {
             this.state.open &&
             <h3>
             Description
+              <Button
+                bsStyle="success"
+                onClick={() => this.setState({ show_message: true })}
+              >
+            Want to send the ideator your feedback on his idea
+              </Button>
+              {
+                  this.state.show_message &&
+                    <Modal.Dialog>
+                      <Modal.Header>
+                        <Modal.Title>Send text to Neelesh</Modal.Title>
+                      </Modal.Header>
+
+                      <Modal.Body><input type="text" name="usrname" /></Modal.Body>
+
+                      <Modal.Footer>
+                        <Button onClick={this.closeMessage}>Close</Button>
+                        <Button bsStyle="primary">Send</Button>
+                      </Modal.Footer>
+                    </Modal.Dialog>
+              }
+              {/* <MessageModal show={this.state.show_message} onHide={this.closeMessage} /> */}
             </h3>
             }
             <br />
