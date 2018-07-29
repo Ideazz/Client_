@@ -55,7 +55,6 @@ class Ideas extends Component {
                       </Modal.Footer>
                     </Modal.Dialog>
               }
-              {/* <MessageModal show={this.state.show_message} onHide={this.closeMessage} /> */}
             </h3>
             }
             <br />
