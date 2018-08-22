@@ -11,6 +11,7 @@ const Navigation = () => (
       <li><Link to="/login_one">Login As Ideators</Link></li>
       <li><Link to="/login_two">Login As Entreprenuer</Link></li>
       <li><Link to="/ideas">Ideas</Link></li>
+      <li><Link to="/refer">Refer</Link></li>
     </ul>
   </nav>
 );

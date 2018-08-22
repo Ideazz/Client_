@@ -9,6 +9,7 @@ import LoginOne from '../Login_One';
 import LoginTwo from '../Login_Two';
 import '../../../assets/styles/components/App.scss';
 import Ideas from '../Ideas';
+import Refer from '../Refer';
 
 const Main = () => (
   <main className="main">
@@ -20,6 +21,7 @@ const Main = () => (
       <Route path="/login_one" component={LoginOne} />
       <Route path="/login_two" component={LoginTwo} />
       <Route path="/ideas" component={Ideas} />
+      <Route path="/refer" component={Refer} />
       <Route path="/*" component={Error404} />
     </Switch>
   </main>
