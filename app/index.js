@@ -16,15 +16,16 @@ import App from './components/App/index';
 import rootReducer from './reducers/index';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const store = createStoreWithMiddleware(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__());
 if (module.hot) {
-  module.hot.accept();
+  module.hot.accept('./reducers/index', () => {
+    store.replaceReducer(rootReducer);
+  });
 }
 
 ReactDOM.render(
-  <Provider store={
-    createStoreWithMiddleware(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__())}
-  >
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>

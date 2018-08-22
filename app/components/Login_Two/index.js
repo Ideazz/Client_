@@ -6,9 +6,9 @@ const LoginTwo = () => (
     backgroundColor: '#1E90FF',
   }}
   >
-    <h2>
-      Login for Entreprenuers
-    </h2>
+    <button>
+     Login for Entreprenuers
+    </button>
   </div>
 );
 
