@@ -77,3 +77,106 @@ p {
     z-index: 1;
     background: #D3D3D3;
 }
+
+.mainBorder {
+    border: 2px solid #cccccc;
+    padding: 4% 4% 5% 5%;
+}
+
+.subBorder {
+    box-shadow: 5px 10px 18px #ffcccc;
+    border: 2px solid #e6e6e6;
+    padding: 2%;
+    width: 100%;
+}
+
+.ideas {
+    background: #f2f2f2;
+    padding: 2%;
+    color: #595959;
+}
+
+.ideas:hover {
+    color: black;
+    background:   #e6e6e6;
+}
+
+#ideas {
+    color: slategrey;
+    font-size: 30px;
+}
+
+.idea_pitch {
+    font-size: 19px;
+}
+
+.userName {
+    font-family: 'Amatic SC';
+    font-size: 12px;
+}
+
+.description {
+    color: #737373;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.expectation{
+    color: darkgray;
+}
+
+.dotted {
+    color: lightgrey;
+    border-top: dashed 1px;
+}
+
+.descriptionWrapper{
+    margin: 2%;
+}
+
+.greyBackground{
+    background: #f2f2f2;
+}
+
+.whiteBackground{
+    background: white;
+}
+
+.profileWrapper{
+    margin-top: 3%;
+    padding: 10%;
+}
+
+.profileIcon{
+    margin: 3%;
+    opacity: 0.25;
+    font-size: 25px;
+}
+
+.profileName{
+    font-size: 30px;
+    color: darkslategray;
+}
+
+.hrProfile{
+    width: 20%;
+}
+
+.desProfile{
+    text-align: justify;
+    width: 70%;
+    color: darkgray;
+    font-size: 15px;
+    border-style: hidden ridge ridge hidden;
+}
+
+.place{
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.occupation{
+    font-size: 15px;
+    border-style: hidden hidden hidden ridge;
+    letter-spacing: 1px;
+}
