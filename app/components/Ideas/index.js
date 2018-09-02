@@ -1,94 +1,70 @@
 import React, { Component } from 'react';
-import { Button, Row, Col, Modal } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { showIdeas, showDescription } from '../../actions/index';
+// import Description from '../Description/index';
+import ShowIdeas from '../ShowIdeas';
+import { URL } from '../../constants/index';
+import '../../../assets/styles/components/App.scss';
 // import MessageModal from '../MessageModal/index';
 
-class Ideas extends Component {
+class ConnectedIdeas extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
-      open1: false,
-      open2: false,
-      show_message: false,
+      type: 'ideas',
     };
-    this.closeMessage = this.closeMessage.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
   }
 
-  closeMessage() {
-    this.setState({ show_message: false });
+  componentDidMount() {
+    const ReqUrl = `${URL}ideas/api/ideas/`;
+    this.props.showIdeas(ReqUrl);
+  }
+
+  handleOpen(id) {
+    console.log('handleOpen');
+    console.log(id);
+    this.setState({ id });
+    const ReqUrl = `${URL}ideas/api/ideas/${id}/`;
+    console.log(ReqUrl);
+    this.props.showDescription(ReqUrl);
   }
 
   render() {
     return (
       <div className="container">
-        <Row className="show-grid">
-          <Col xs={8} md={8}>
-            <Button onClick={() => this.setState({ open: !this.state.open })}>
-              <p>
-                Web-based social seating check-in platform to help air travelers see who
-                is on board their flight and use Facebook and Linked in to assign all
-                flight seats with one click.
-              </p>
-            </Button>
-            {
-            this.state.open &&
-            <h3>
-            Description
-              <Button
-                bsStyle="success"
-                onClick={() => this.setState({ show_message: true })}
-              >
-            Want to send the ideator your feedback on his idea
-              </Button>
-              {
-                  this.state.show_message &&
-                    <Modal.Dialog>
-                      <Modal.Header>
-                        <Modal.Title>Send text to Neelesh</Modal.Title>
-                      </Modal.Header>
-
-                      <Modal.Body><input type="text" name="usrname" /></Modal.Body>
-
-                      <Modal.Footer>
-                        <Button onClick={this.closeMessage}>Close</Button>
-                        <Button bsStyle="primary">Send</Button>
-                      </Modal.Footer>
-                    </Modal.Dialog>
-              }
-            </h3>
-            }
-            <br />
-            <br />
-            <Button onClick={() => this.setState({ open1: !this.state.open1 })}>
-              <p>
-                A gift recommendation engine to help men foster better relationships through
-                periodic and thoughtful romantic gestures models of preference and social trends.
-              </p>
-            </Button>
-            {
-            this.state.open1 &&
-            <h3>
-            Description
-            </h3>
-            }
-            <br />
-            <br />
-            <Button onClick={() => this.setState({ open2: !this.state.open2 })}>
-              <p>
-                Developing a cross-platform software to help anyone.
-              </p>
-            </Button>
-            {
-            this.state.open2 &&
-            <h3>
-            Description
-            </h3>
-             }
-          </Col>
+        <Row className="show-grid mainBorder">
+          <p id="ideas">Idea<u><strong>S</strong></u>:</p>
+          <div className="subBorder">
+            <ShowIdeas
+              ideas={this.props.ideas}
+              id={this.state.id}
+              handleOpen={this.handleOpen}
+              type={this.state.type}
+            />
+          </div>
         </Row>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({ ideas: state.ideas });
+
+const mapDispatchToProps = dispatch => ({
+  showIdeas: url => dispatch(showIdeas(url)),
+  showDescription: url => dispatch(showDescription(url)),
+  // showPerson: bindActionCreators({ showPerson }, dispatch),
+});
+
+const Ideas = connect(mapStateToProps, mapDispatchToProps)(ConnectedIdeas);
+
+ConnectedIdeas.propTypes = {
+  showIdeas: PropTypes.func.isRequired,
+  showDescription: PropTypes.func.isRequired,
+  ideas: PropTypes.array,
+};
 
 export default Ideas;

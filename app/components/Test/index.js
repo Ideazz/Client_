@@ -17,7 +17,7 @@ class ConnectedTest extends Component {
 
   handleButton(event) {
     console.log(event);
-    this.props.showPerson('http://localhost:8000/api/');
+    this.props.showPerson('http://localhost:8000/ideas/api/ideas/');
   }
   render() {
     return (

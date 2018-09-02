@@ -1,7 +1,7 @@
 import { SHOW_PERSON } from '../constants/action-types';
 
 const personReducer = (state = [], action) => {
-  console.log(action.payload);
+  console.log(action);
   switch (action.type) {
     case SHOW_PERSON:
       return [...state, action.payload.data];
