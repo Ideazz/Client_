@@ -13,6 +13,7 @@ class ConnectedProfile extends Component {
     super();
 
     this.state = {
+      type: 'profile',
     };
     this.handleOpen = this.handleOpen.bind(this);
   }
@@ -66,6 +67,7 @@ class ConnectedProfile extends Component {
                 ideas={this.props.ideas}
                 id={this.state.id}
                 handleOpen={this.handleOpen}
+                type={this.state.type}
               />
             </Col>
             <Col xs={1} md={3} />

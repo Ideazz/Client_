@@ -12,7 +12,10 @@ const ShowIdeas = props => (
       <Col xs={8} md={10} key={idea.id}>
         <div className="ideas" aria-hidden onClick={() => props.handleOpen(idea.id)} role="button">
           <p className="idea_pitch"> {idea.subject}</p>
-          <p className="userName"> {idea.username} | <cite>Entrepreneur</cite></p>
+          {
+            props.type === 'ideas' &&
+            <p className="userName"> {idea.username} | <cite>Entrepreneur</cite></p>
+          }
         </div>
         {
             props.id === idea.id &&

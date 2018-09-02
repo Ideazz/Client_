@@ -13,6 +13,7 @@ class ConnectedIdeas extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      type: 'ideas',
     };
     this.handleOpen = this.handleOpen.bind(this);
   }
@@ -41,6 +42,7 @@ class ConnectedIdeas extends Component {
               ideas={this.props.ideas}
               id={this.state.id}
               handleOpen={this.handleOpen}
+              type={this.state.type}
             />
           </div>
         </Row>
