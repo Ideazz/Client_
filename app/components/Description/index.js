@@ -17,8 +17,6 @@ const ConnectedDescription = ({ data }) => (
   </div>
 );
 
-const Description = connect(mapStateToProps)(ConnectedDescription);
-
 ConnectedDescription.defaultProps = {
   data: {},
 };
@@ -27,4 +25,4 @@ ConnectedDescription.propTypes = {
   data: PropTypes.object,
 };
 
-export default Description;
+export default connect(mapStateToProps)(ConnectedDescription);
