@@ -1,11 +1,12 @@
 import React, { } from 'react';
-
+import { Button } from '../../commons';
 const Error404 = () => (
-  <div>
-    <h2>
-      Error 404! Page not Found.
+	<div>
+		<h2>
+			Error 404! Page not Found.
     </h2>
-  </div>
+		<Button />
+	</div>
 );
 
 export default Error404;
