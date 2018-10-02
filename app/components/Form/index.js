@@ -56,10 +56,8 @@ class ConnectedForm extends Component {
   }
 }
 
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
-
 ConnectedForm.propTypes = {
   addArticle: PropTypes.func.isRequired,
 };
 
-export default Form;
+export default connect(null, mapDispatchToProps)(ConnectedForm);

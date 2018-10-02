@@ -89,7 +89,6 @@ const mapDispatchToProps = dispatch => ({
   showDescription: url => dispatch(showDescription(url)),
 });
 
-const Profile = connect(mapStateToProps, mapDispatchToProps)(ConnectedProfile);
 
 ConnectedProfile.propTypes = {
   showProfile: PropTypes.func.isRequired,
@@ -98,4 +97,4 @@ ConnectedProfile.propTypes = {
   profile: PropTypes.object,
   ideas: PropTypes.array,
 };
-export default Profile;
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedProfile);

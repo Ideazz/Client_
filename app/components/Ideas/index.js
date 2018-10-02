@@ -59,12 +59,10 @@ const mapDispatchToProps = dispatch => ({
   // showPerson: bindActionCreators({ showPerson }, dispatch),
 });
 
-const Ideas = connect(mapStateToProps, mapDispatchToProps)(ConnectedIdeas);
-
 ConnectedIdeas.propTypes = {
   showIdeas: PropTypes.func.isRequired,
   showDescription: PropTypes.func.isRequired,
   ideas: PropTypes.array,
 };
 
-export default Ideas;
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedIdeas);
